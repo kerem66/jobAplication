@@ -1,0 +1,54 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+./applicaiton/.apt_generated
+./applicaiton/.classpath
+./applicaiton/.factorypath
+./applicaiton/.project
+./applicaiton/.settings
+./applicaiton/.springBeans
+./applicaiton/.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+./applicaiton/*.iws
+./applicaiton/*.iml
+./applicaiton/*.ipr
+
+### NetBeans ###
+./applicaiton/nbproject/private/
+./applicaiton/nbbuild/
+./applicaiton/dist/
+./applicaiton/nbdist/
+./applicaiton/.nb-gradle/
+./applicaiton/build/
+
+### VS Code ###
+.vscode/
+
+
+# dependencies
+./frontend/node_modules
+./frontend/.pnp
+./frontend/.pnp.js
+
+# testing
+./frontend/coverage
+
+# production
+./frontend/build
+
+# misc
+./frontend/.DS_Store
+./frontend/.env.local
+./frontend/.env.development.local
+./frontend/.env.test.local
+./frontend/.env.production.local
+
+./frontend/npm-debug.log*
+./frontend/yarn-debug.log*
+./frontend/yarn-error.log*
