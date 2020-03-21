@@ -3,6 +3,7 @@ package com.job.application.utils;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
@@ -12,6 +13,11 @@ public class HrManager {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID", updatable = false)
     private Integer managerId;
+
+    @Column
+    @Email(message = "Email is invalid!")
+    @NotEmpty
+    private String email;
 
     @Column(name = "PASSWORD")
     @NotEmpty(message = "Password cannot be blank!")
@@ -31,10 +37,12 @@ public class HrManager {
     public HrManager() {
     }
 
-    public HrManager(@NotEmpty(message = "Password cannot be blank!") String password,
+    public HrManager(@Email(message = "Email is invalid!") @NotEmpty String email,
+                     @NotEmpty(message = "Password cannot be blank!") String password,
                      @NotEmpty(message = "First Name cannot be blank!") String firstname,
                      @NotEmpty(message = "Last Name cannot be blank!") String lastname,
                      Role role) {
+        this.email = email;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -79,5 +87,13 @@ public class HrManager {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
